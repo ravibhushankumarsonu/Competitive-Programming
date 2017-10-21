@@ -18,7 +18,7 @@ void swap(int* a,int *b){
     *a=*b;
     *b=temp;
 }
-
+ 
 void sol(vector<string>&graph,vector<int>&arr,int n){
     vector<bool>visited(n,false);
     stack<int>st;
