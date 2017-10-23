@@ -15,7 +15,7 @@ github : https://github.com/ravibhushankumarsonu
 #define MOD 1000000007
 
 using namespace std;
-
+typedef long long int lli;
 
 int main() {
 	// your code goes here
@@ -26,7 +26,7 @@ int main() {
 	while(t--){
 		string str;
 		cin>>str;
-		int ans=0;
+		lli ans=0;
 		//cout<<str<<endl;
 		int n=str.length();
 		if(n==1){
@@ -41,7 +41,7 @@ int main() {
 		}
 		//cout<<str<<" ";
 		int j=0;
-		int len=1;
+		lli len=1;
 		vector<int>freq;
 		for(int i=1;i<n;i++){
 			if(str[i]!=str[i-1]){

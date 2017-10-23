@@ -20,6 +20,11 @@ int main() {
 	// your code goes here
 	//freopen("input.in","r",stdin);
     //freopen("output.out","w",stdout);
-    
+	int v;
+	scanf("%d",&v);
+	int arr[10];
+	for(int i=1;i<10;i++){
+		scanf("%d",&arr[i]);
+	}
 	return 0;
 }
