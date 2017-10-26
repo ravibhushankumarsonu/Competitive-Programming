@@ -37,6 +37,13 @@ bool Find(int x,int y){
 	return false;
 }
 
+void Clear(){
+	for(int i=0;i<10;i++){
+		visited[i]=NULL;
+	}
+	return;
+}
+
 bool solveUtil(string* arr,int r,int c,int x,int y,string str,int k){
 	//printf("x: %d y: %d",x,y);
 	if(k==str.length()){
@@ -65,6 +72,7 @@ bool solve(string* arr,int r,int c){
 	for(int i=0;i<r;i++){
 		for(int j=0;j<c;j++){
 			if(arr[i][j]==str[0]){
+				Clear();
 				visited[0]=newNode(i,j);
 				if(solveUtil(arr,r,c,i,j,str,1)==true)
 				return true;
