@@ -26,7 +26,66 @@ int main() {
 	while(t--){
 		int n,q;
 		scanf("%d %d",&n,&q);
-		
+		if(n<=2||q==1){
+			cout<<"impossible"<<endl;
+			continue;
+		}
+		string ans="";
+		for(int i=0;i<n;i++)ans+="a";
+		int l,r,i;
+		if(n%2==1){
+			i=n/2;
+			l=i;
+			r=i;
+			//cout<<l<<" "<<r<<endl;
+			while(l>=0){
+				ans[l]='b';
+				l-=q;
+			}
+			while(r<n){
+				ans[r]='b';
+				r+=q;
+			}
+		}else{
+			if(q==2){
+				cout<<"impossible"<<endl;
+				continue;
+			}
+			i=n/2;
+			l=i;
+			r=i;
+			//cout<<l<<" "<<r<<endl;
+			while(l>=0){
+				ans[l]='b';
+				l-=q;
+			}
+			while(r<n){
+				ans[r]='b';
+				r+=q;
+			}
+			i=(n/2)-1;
+			l=i;
+			r=i;
+			//cout<<l<<" "<<r<<endl;
+			while(l>=0){
+				ans[l]='b';
+				l-=q;
+			}
+			while(r<n){
+				ans[r]='b';
+				r+=q;
+			}
+		}
+		//cout<<l<<" "<<r<<endl;
+		while(l>=0){
+			ans[l]='b';
+			l-=q;
+		}
+		while(r<n){
+			ans[r]='b';
+			r+=q;
+		}
+		cout<<ans<<endl;
 	}
 	return 0;
 }
