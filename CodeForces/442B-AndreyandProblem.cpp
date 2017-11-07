@@ -15,8 +15,7 @@ github : https://github.com/ravibhushankumarsonu
 
 #define MOD 1000000007
 
-using namespace std;
-
+using namespace std
 
 int main() {
 	// your code goes here

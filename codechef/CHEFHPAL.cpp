@@ -16,7 +16,6 @@ github : https://github.com/ravibhushankumarsonu
 
 using namespace std;
 
-
 int main() {
 	// your code goes here
 	//freopen("input.in","r",stdin);
