@@ -26,15 +26,6 @@ void init(){
 	mat[12][1] = 1;
 }
 
-void display(){
-	for(int i=1;i<13;i++){
-		for(int j=1;j<12;j++)
-			printf("%8d", mat[i][j]);
-		printf("\n");
-	}
-	system("pause");
-}
-
 int main(){
 	
 	init();
@@ -48,7 +39,6 @@ int main(){
 		for(int i=1;i<12;i++)
 			mat[12][j] += mat[i][j];
 		
-//		display();
 	}
 	
 	int t, n;
