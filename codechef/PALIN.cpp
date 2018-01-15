@@ -15,6 +15,7 @@ https://www.codechef.com/problems/PALIN
 #define MOD 1000000007
 
 using namespace std;
+typedef long long int lli;
 
 
 int main() {
