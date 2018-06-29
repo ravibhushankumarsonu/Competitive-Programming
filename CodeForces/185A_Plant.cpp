@@ -10,32 +10,34 @@ github : https://github.com/ravibhushankumarsonu
 #include<algorithm>
 #include<limits>
 #include<string>
-#include<stack>
 
 #define MOD 1000000007
 
 using namespace std;
+typedef long long int lli;
 
+lli pow(lli a){
+	if(a==0)return 1;
+	if(a==1)return 2;
+	lli temp=pow(a/2);
+	if(a%2==0){
+		return (temp*temp)%MOD;
+	}else{
+		return (2*((temp*temp)%MOD))%MOD;
+	}
+}
 
 int main() {
 	// your code goes here
 	//freopen("input.in","r",stdin);
     //freopen("output.out","w",stdout);
-    int n,p,u,v,d;
-	scanf("%d %d",&n,&p);
-	vector< vector<pair<int,int> > >graph(n+1);
-	
-	for(int i=0;i<p;i++){
-		scanf("%d %d %d",&u,&v,&d);
-		graph[u].push_back(make_pair(v,d));
+    lli a;
+	cin>>a;
+	if(a==0){
+		cout<<1<<endl;
+		return 0;
 	}
-	
-	stack<int>st;
-	vector<bool>visited(n+1,false);
-
-	for(int i=1;i<=n;i++){
-		if()
-	}
-
+	lli ans=(pow(a-1)*(pow(a)+1))%MOD;
+	cout<<ans<<endl;
 	return 0;
 }
