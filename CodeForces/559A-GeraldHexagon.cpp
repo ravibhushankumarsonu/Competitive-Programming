@@ -18,8 +18,9 @@ using namespace std;
 
 int main() {
 	// your code goes here
-	//freopen("input.in","r",stdin);
+	//freopen("input.in","r",stdin); 
     //freopen("output.out","w",stdout);
+	// this is new change
 	int a1,a2,a3,a4,a5,a6;
 	cin>>a1>>a2>>a3>>a4>>a5>>a6;
 	int k=a1+a2+a3;
