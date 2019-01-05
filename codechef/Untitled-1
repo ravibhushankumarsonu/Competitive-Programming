@@ -1,0 +1,25 @@
+{
+    "content_fact_base_path": "hdfs://arjuna/projects/ads/network/reco/test/content_fact",
+    "content_fact_events_input_base_path": "/projects/ads/network/reco/raw/export_kafka",
+    "cur-partitions": "00,01,02,03",
+    "dart_fkint_cp_web_reco_PersonalisedRecoResponses": "1.1",
+    "dart_fkint_cp_web_reco_ProductRecoResponses": "1.1",
+    "dart_fkint_cp_web_reco_RecoServedResponse": "3.1",
+    "event_list_for_job_trigger": "fb_fkint_cp_ca_discover_DiscoveryContentImpression,fb_fkint_cp_ca_discover_DiscoveryContentClick",
+    "events_list": "DCC,DWC,DWI,PC",
+    "fb_fkint_cp_ca_discover_DiscoveryContentClick": "1.3",
+    "fb_fkint_cp_ca_discover_DiscoveryContentImpression": "1.4",
+    "intermediate_ack_partitioned_basepath": "hdfs://arjuna/projects/ads/network/reco/test/intermediate/ack_content",
+    "num_of_reducers": 50,
+    "number_of_previous_serving_buckets": "1",
+    "product_page_responses_base_path": "/projects/ads/network/reco/raw/spectre_kafka/dart_fkint_cp_web_reco_ProductRecoResponses",
+    "product_page_responses_schema_version": "1.1",
+    "response_ack_base_path_key": "/projects/ads/network/raw/avro/events/in/mnm_response_ack",
+    "served_reco_responses_base_path": "hdfs://arjuna/projects/ads/network/raw/spectre_kafka/dart_fkint_cp_web_reco_RecoServedResponse",
+    "served_reco_schema_version": "3.1",
+    "spectre_kafka_event_base_path": "hdfs://arjuna/projects/ads/network/raw/spectre_kafka/",
+    "spectre_kafka_event_list": "dart_fkint_cp_web_reco_RecoServedResponse"
+}
+
+
+257_gobblin-job	1544447922458	1544447968836	Test_Neo_Kafka_Gobblin	neo_kafka	prod	gobblin	mnm_response_ack	/projects/ads/network/raw/test/avro/events/in	[{"status":true,"processedBucket":["1544446800000"],"expectedOffset":"16540904803","actualOffset":"16540904803"},{"status":true,"processedBucket":["1544446800000"],"expectedOffset":"17540014198","actualOffset":"17540014198"},{"status":true,"processedBucket":["1544446800000"],"expectedOffset":"17540867264","actualOffset":"17540867264"},{"status":true,"processedBucket":["1544446800000"],"expectedOffset":"17540075523","actualOffset":"17540075523"},{"status":true,"processedBucket":["1544446800000"],"expectedOffset":"16541053488","actualOffset":"16541053488"}]	1544445000000	2018-12-10 18:49:33	2018-12-10 18:49:33

@@ -11,6 +11,7 @@ github : https://github.com/ravibhushankumarsonu
 #include<algorithm>
 #include<limits>
 #include<string>
+#include<set>
 
 #define MOD 1000000007
 
@@ -21,7 +22,13 @@ int main() {
 	// your code goes here
 	//freopen("input.in","r",stdin);
     //freopen("output.out","w",stdout);
-    vector<int>arr(n,0)
-    sort(arr.begin(),arr.end());
+    int t;
+	cin>>t;
+
+	while(t--) {
+		int n;
+		cin>>n;
+		
+	}
 	return 0;
 }

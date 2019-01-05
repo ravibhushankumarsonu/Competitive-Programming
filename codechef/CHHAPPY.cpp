@@ -11,7 +11,7 @@ github : https://github.com/ravibhushankumarsonu
 #include<algorithm>
 #include<limits>
 #include<string>
-#include<list>
+#include<set>
 
 #define MOD 1000000007
 
@@ -28,12 +28,13 @@ int main() {
 		int n;
 		scanf("%d ", &n);
 		vector<int> arr(n+1);
-		vector< list<int> > mat(n+1,list<int>());
+		//vector< set<int> > mat(n+1,set<int>());
+		vector<int>mat(n+1,0);
 		for(int i=1; i<=n; i++) {
 			scanf("%d ",&arr[i]);
 		}
 		bool ans = false;
-		for(int i=1; i<=n ;i++) {
+		/*for(int i=1; i<=n ;i++) {
 			if(mat[arr[arr[i]]].size() > 0) {
 				for(auto itr=mat[arr[arr[i]]].begin(); itr!=mat[arr[arr[i]]].end(); itr++) {
 					if(arr[i] != arr[*itr]) {
@@ -42,12 +43,26 @@ int main() {
 					}
 				}
 				if(ans == false) {
-					mat[arr[arr[i]]].push_back(i);
+					mat[arr[arr[i]]].insert(i);
 				}else {
 					break;
 				}
 			}else{
-				mat[arr[arr[i]]].push_back(i);
+				mat[arr[arr[i]]].insert(i);
+			}
+		}*/
+		for(int i=1;i<=n;i++) {
+			if(mat[arr[arr[i]]] != 0) {
+				if(arr[i] != arr[arr[arr[i]]]) {
+					ans=true;
+				}else {
+					mat[arr[arr[i]]] = i;
+				}
+			} else {
+				mat[arr[arr[i]]] = i;
+			}
+			if(ans == true) {
+				break;
 			}
 		}
 

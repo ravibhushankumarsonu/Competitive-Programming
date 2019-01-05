@@ -21,7 +21,35 @@ int main() {
 	// your code goes here
 	//freopen("input.in","r",stdin);
     //freopen("output.out","w",stdout);
-    vector<int>arr(n,0)
-    sort(arr.begin(),arr.end());
+    int t;
+	cin>>t;
+	while(t--) {
+		int n,a,b;
+		cin>>n>>b>>a;
+		int lcm = 0;
+		int bob = 0;
+		int alice =0;
+		for(int i=0; i<n ;i++){
+			int temp;
+			cin>>temp;
+			if(temp%b==0 && temp%a==0) {
+				lcm++;
+			}else if(temp%b==0){
+				bob++;
+			}else if(temp%a==0){
+				alice++;
+			}
+		}
+		//cout<<lcm<<" "<<bob<<" "<<alice<<endl;
+		if(lcm > 0){
+			bob++;
+		}
+
+		if(bob<=alice){
+			cout<<"ALICE"<<endl;
+		} else {
+			cout<<"BOB"<<endl;
+		}
+	}
 	return 0;
 }
