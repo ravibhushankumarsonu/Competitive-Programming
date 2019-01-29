@@ -1,4 +1,2 @@
-.idea/*
-.vscode/
-*.class
-*/a.out
+.idea
+.vscode
