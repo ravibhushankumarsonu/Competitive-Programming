@@ -1,83 +1,104 @@
 /*
 Author: Ravibhushan Kumar
-College: IIT(ISM) Dhanbad
+Occupation: Software Developer
+Skilled: Java, Big Data, Linux, Machine Learning
 Email id: ravibhushankumarsonu@gmail.com
 Linkdin: https://www.linkedin.com/in/ravibhushan-kumar-6ab881b0/
 github : https://github.com/ravibhushankumarsonu 
-problem : https://www.codechef.com/problems/MTYFRI 
+problem: https://www.codechef.com/problems/MTYFRI 
 */
-#include <iostream>
-#include<vector>
-#include<algorithm>
-#include<limits>
-#include<string>
-#include<queue>
+#include<bits/stdc++.h>
 
 #define MOD 1000000007
 
 using namespace std;
+typedef long long int lli;
 
+lli get_array_sum(vector<int> &arr) {
+	lli sum = 0;
+	for(int i=0; i<arr.size(); i++) {
+		sum+=arr[i];
+	} 
+	return sum;
+}
+
+lli gain_after_k_swaps(vector<int>&motu_arr, vector<int>&tomu_arr, int k) {
+	lli motu_greatest_k_sum = 0;
+	int temp = k;
+	for(int i=motu_arr.size()-1; i>=0 && temp>0; i--,temp--) {
+		motu_greatest_k_sum += motu_arr[i];
+	} 
+
+	lli tomu_least_k_sum = 0;
+	temp =k;
+	for(int i=0; i< tomu_arr.size() && temp>0; i++,temp--) {
+		tomu_least_k_sum+=tomu_arr[i];
+	}
+
+	lli diff = motu_greatest_k_sum - tomu_least_k_sum;
+	return 2*diff;
+}
+
+bool isWinTomu(vector<int>&motu_arr, vector<int>&tomu_arr, int k) {
+	lli motu_socre = get_array_sum(motu_arr);
+	lli tomu_score = get_array_sum(tomu_arr);
+	if(tomu_score > motu_socre) {
+		return true;
+	}
+	sort(motu_arr.begin(), motu_arr.end());
+	sort(tomu_arr.begin(), tomu_arr.end());
+
+	//lli diff = gain_after_k_swaps(motu_arr, tomu_arr, k);
+	lli motu_greatest_k_sum = 0;
+	int temp = k;
+	for(int i=motu_arr.size()-1; i>=0 && temp>0; i--,temp--) {
+		motu_greatest_k_sum += motu_arr[i];
+	} 
+
+	lli tomu_least_k_sum = 0;
+	temp =k;
+	for(int i=0; i< tomu_arr.size() && temp>0; i++,temp--) {
+		tomu_least_k_sum+=tomu_arr[i];
+	}
+
+	motu_socre = motu_socre - motu_greatest_k_sum + tomu_least_k_sum ;
+	tomu_score = tomu_score - tomu_least_k_sum + motu_greatest_k_sum;
+
+	if(tomu_score > motu_socre) {
+		return true;
+	}
+	return false;
+}
+
+void solve() {
+	int n,k;
+	cin>>n>>k;
+	vector<int> motu_arr;
+	vector<int> tomu_arr;
+	for(int i=0; i<n; i++) {
+		int temp;
+		cin>>temp;
+		if(i&1) {
+			tomu_arr.push_back(temp);
+		} else {
+			motu_arr.push_back(temp);
+		}
+	}
+	if(isWinTomu(motu_arr, tomu_arr,k)) {
+		cout << "YES" <<endl;
+	} else {
+		cout<< "NO" <<endl;
+	}
+}
 
 int main() {
 	// your code goes here
 	//freopen("input.in","r",stdin);
     //freopen("output.out","w",stdout);
-    int t;
-	scanf("%d", &t);
+	int t;
+	cin>>t;
 	while(t--) {
-		int n,k;
-		scanf("%d %d", &n, &k);
-		vector<vector<int> > arr(n,vector<int>(2));
-		int total = 0;
-		for(int i=0;i<n;i++) {
-			scanf("%d", &arr[i][0]);
-			total+=arr[i][0];
-			arr[i][1] = i;
-		}
-		sort(arr.begin(),arr.end());
-
-		/*for(int i=0; i<n; i++) {
-			cout << arr[i][0] << " " << arr[i][1] << "/ ";
-		}
-		cout << endl;*/
-		queue<int> lower_even;
-		queue<int> lower_odd;
-		for(int i=0; i<n; i++) {
-			if(arr[i][1]%2 == 0) {
-				lower_even.push(i);
-			} else {
-				lower_odd.push(i);
-			}
-		}
-
-		int score = 0;
-		int i = n-1;
-		int ans = false;
-		while(i>=0 || k >0) {
-			if(arr[i][1]%2==1) {
-				score+=arr[i][0];
-			} else {
-				if(arr[i][0] > arr[lower_even.front()][0] && k>0) {
-					k--;
-					lower_even.pop();
-					score += arr[lower_even.front()][0];
-				}
-			}
-			if(score > (total-score)) {
-				ans=true;
-				break;
-			}
-			if(i==0) {
-				break;
-			}
-			i--;
-		}
-
-		if(ans==true) {
-			cout<<"YES"<<endl;
-		} else {
-			cout<<"NO"<<endl;
-		}
-	}
+		solve();
+	}   
 	return 0;
 }
