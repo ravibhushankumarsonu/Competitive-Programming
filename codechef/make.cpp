@@ -21,6 +21,5 @@ int main() {
 	// your code goes here
 	//freopen("input.in","r",stdin);
     //freopen("output.out","w",stdout);
-    
 	return 0;
 }
