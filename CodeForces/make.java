@@ -12,7 +12,8 @@ import java.util.Scanner;
 class Solution{
     public static void main(String args[]){
         //Sample code goes here
-        Scanner in =new Scanner(System.in);
+        //Scanner in =new Scanner(System.in);
+        System.out.println("Hello World");
         
     }
 }
