@@ -12,7 +12,7 @@ import java.lang.*;
 import java.io.*;
 
 /* Name of the class has to be "Main" only if the class is public. */
-class Solution
+class DIFNEIGH
 {
 	public static void prt(int[][] ar , int n , int m){
         for(int i=0;i<n;i++){

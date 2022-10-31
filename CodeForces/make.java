@@ -9,7 +9,7 @@ url :
 
 import java.util.Scanner;
 
-class Solution{
+class make{
     public static void main(String args[]){
         //Sample code goes here
         //Scanner in =new Scanner(System.in);

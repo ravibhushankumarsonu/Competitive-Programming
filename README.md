@@ -5,9 +5,14 @@
     New 
     git commit --author="ravibhushankumarsonu <ravibhushankumarsonu@gmail.com>" -m "Changes"
 
-## Running C++ Codes
-On Windows
+## Running Codes
+On Windows<br>
+C++
 ```
 g++ code.cpp
 ./a.exe
+```
+Java
+```
+
 ```

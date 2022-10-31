@@ -12,7 +12,7 @@ import java.lang.*;
 import java.io.*;
 
 /* Name of the class has to be "Main" only if the class is public. */
-class Solution
+class JavaMake
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{
@@ -21,7 +21,7 @@ class Solution
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int t = (int)(Integer.parseInt(br.readLine()));
         while(t>0) {
-            sol.solve(br);
+           // sol.solve(br);
             t--;
         }
 	}
