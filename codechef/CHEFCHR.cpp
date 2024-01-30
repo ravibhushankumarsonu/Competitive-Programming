@@ -37,6 +37,7 @@ int main() {
 			for(int j=i;j<i+4;j++){
 				arr[str[j]-'a']--;
 			}
+			
 			if(arr['c'-'a']==0&&arr['h'-'a']==0&&arr['e'-'a']==0&&arr['f'-'a']==0)cnt++;
 			//cout<<arr['c'-'a']<<" ";
 		}
